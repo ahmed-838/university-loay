@@ -37,13 +37,13 @@ router.delete('/:_id', async (req, res) => {
 
     router.put('/:_id', async (req, res) => {
         const { _id } = req.params;
-        const { name, imageUrl, description, location, type,
+        const { name, university_name, imageUrl, description, location, type,
             degreeType, tuition, departments, established,
             rating, website, contactEmail, studentCount,
             facultyCount } = req.body;
         
         const faculty = await Faculty.findByIdAndUpdate(_id, { name,
-            imageUrl, description, location, type,
+            university_name, imageUrl, description, location, type,
             degreeType, tuition, departments, established,
             rating, website, contactEmail, studentCount,
             facultyCount }, { new: true });
@@ -51,12 +51,12 @@ router.delete('/:_id', async (req, res) => {
     });
 
 router.post('/', async (req, res) => {
-    const { name, imageUrl, description,
+    const { name, university_name, imageUrl, description,
         location, type, degreeType, tuition,
         departments, established, rating, website,
          contactEmail, studentCount, facultyCount } = req.body;
 
-    const faculty = new Faculty({ name, imageUrl,
+    const faculty = new Faculty({ name, university_name, imageUrl,
          description, location, type, degreeType,
           tuition, departments, established, rating,
            website, contactEmail, studentCount, facultyCount });

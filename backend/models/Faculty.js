@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const facultySchema = new mongoose.Schema({
   name: { type: String, required: true }, 
+  university_name: { type: String, required: true },
   description: { type: String, required: true }, 
   location: { type: String, required: true }, 
   type: { type: String, required: true }, 
